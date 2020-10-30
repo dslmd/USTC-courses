@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Peking Univ. Physical Review (cn)
+%
+% LaTeX Template
+% Version 2.1
+% Release 03/19/18
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+%\RequirePackage{times}      % Loads the Times-Roman Fonts
+%\RequirePackage{mathptmx}   % Loads the Times-Roman Math Fonts
+\let\nofiles\relax % 加入这一行即可，关键的一行
+\documentclass[10pt,a4paper,twocolumn]{PPRAcn} % Document font size
+
+\usepackage[UTF8]{ctex}
+\usepackage[english]{babel} % Specify a different language here - english by default
+\usepackage{lipsum} % Required to insert dummy text. To be removed otherwise
+\usepackage{bm,caption,textcomp,subfigure,float}
+\usepackage[keeplastbox]{flushend}
+\usepackage{geometry}
+\newgeometry{top=28mm,bottom=25mm,left=20mm,right=25mm}
+
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
+%----------------------------------------------------------------------------------------
+%	COLUMNS
+%----------------------------------------------------------------------------------------
+
+\setlength{\columnsep}{7.0mm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{0pt}
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref} % Required for hyperlinks
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+\captionsetup[figure]{name={图}}
+\captionsetup[table]{name={表}}
+\captionsetup{font={small}}
+%\JournalInfo{Journal, Vol. XXI, No. 1, 1-5, 2013} % Journal information
+%\Archive{Additional note} % Additional notes (e.g. copyright, DOI, review/research article)
+
+\input{essay/info} %这是标题，作者和摘要（关键词）
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\flushbottom % Makes all text pages the same height
+
+\maketitle % Print the title and abstract box
+
+%\tableofcontents % Print the contents section
+
+\thispagestyle{empty} % Removes page numbering from the first page
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\input{essay/text} %这是正文
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\phantomsection
+\small
+\renewcommand\refname{参考文献}
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99}  
+
+\bibitem{single_photon_source} Sinha, Urbasi et al. “Single photon sources: ubiquitous tools in quantum information processing.” arXiv: Quantum Physics (2019): n. pag.
+
+\bibitem{REV} V A Reshetov. (2020) Photon emission by an atom with degenerate levels into a micro-cavity with polarization-degenerate mode. Laser Physics 30:8, pages 086001.
+
+\bibitem{Scully}Scully, M., Zubairy, M. (1997). Quantum Optics. Cambridge: Cambridge University Press. doi:10.1017/CBO9780511813993
+
+\bibitem{Geoffrey} New, G. (2011). Introduction to Nonlinear Optics. Cambridge: Cambridge University Press. doi:10.1017/CBO9780511975851
+
+\bibitem{SPDC} Couteau, Christophe. “Spontaneous parametric down-conversion.” Contemporary Physics 59 (2018): 291 - 304.
+
+\bibitem{Nonlinear_Crystall1}T. Kim, M. Fiorentino, and F. N. C. Wong, Phase-stable source of polarization-entangled photons using a polarization Sagnac interferometer, Phys. Rev. A 73, 012316 (2006).
+
+\bibitem{Nonlinear_Crystall2}P. G. Kwiat, K. Mattle, H. Weinfurter, A. Zeilinger, A. V. Sergienko, and Y. Shih, New High-Intensity Source of Polarization-Entangled Photon Pairs, Phys. Rev. Lett. 75, 4337 (1995).
+
+\bibitem{Nonlinear_Crystall3}P. J. Mosley, J. S. Lundeen, B. J. Smith, P. Wasylczyk, A. B. U’Ren, C. Silberhorn, and I. A. Walmsley, Heralded Generation of Ultrafast Single Photons in Pure Quantum States, Phys. Rev. Lett. 100, 133601 (2008).
+
+\bibitem{Boson_Sampling} Gard, Bryan T. et al. “An Introduction to Boson-Sampling.” arXiv: Quantum Physics (2015): 167-192.
+
+\bibitem{2011AA} S. Aaronson and A. Arkhipov, “The computational complexity of linear optics,” in Proc. 43rd Annu. ACM Symp. Theory of Comput., A. Press, Ed., pp. 333–342 (2011).
+
+\bibitem{calculate_pemanent} L. Valiant, “The complexity of computing the permanent,” Theor. Comput. Sci. 8(2), 189–201 (1979).
+
+\bibitem{theory_model} J. J. Renema, V. Shchesnovich, and R. Garcia-Patron, Classical simulability of noisy boson sampling, arXiv:1809.01953
+
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

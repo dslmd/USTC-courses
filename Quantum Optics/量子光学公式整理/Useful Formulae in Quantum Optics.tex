@@ -1,0 +1,90 @@
+\documentclass{article}  %使用中文版的article文档类型排版，并选择UTF8编码格式
+
+\usepackage{amsmath}  %使用宏包，这里使用的是调用公式宏包，可以调用多个宏包
+\usepackage{graphicx}   %我们先添加宏包插图，方便接下来添加图片
+\usepackage{amsmath}  %使用宏包，这里使用的是调用公式宏包，可以调用多个宏包
+\newcommand\degree{^\circ}    %定义新命令degree
+
+
+%定义标题
+\title{Useful Formulae in Quantum Optics}  %大括号里填写标题
+\author{Mint}  %大括号里填写作者姓名
+
+
+%开始写文章
+\begin{document}  
+
+\maketitle %做标题
+
+\section{Universal formula}
+
+\begin{gather}%会产生编号
+[\hat{A},\hat{B}^n]=n[\hat{A},\hat{B}]\hat{B}^{n-1} \quad if \quad [B,[A,B]]=0  \\
+[\hat{A}^n,\hat{B}]=n\hat{A}^{n-1}[\hat{A},\hat{B}] \quad if \quad [A,[A,B]]=0 \\
+\frac{d}{d\lambda}e^{\lambda \hat{A}}=\hat{A}e^{\lambda\hat{A}}  \\
+[\hat{A},e^{\lambda\hat{B}}]=\lambda[\hat{A},\hat{B}]e^{\lambda\hat{B}} \quad if \quad [B,[A,B]]=[A,[A,B]]=0 \\
+e^{\hat{A}+\hat{B}}=e^{\hat{A}}e^{\hat{B}}e^{-\frac{1}{2}[\hat{A},\hat{B]}} \quad if \quad [B,[A,B]]=[A,[A,B]]=0\\
+e^{-\alpha\hat{A}}\hat{B}e^{\alpha\hat{A}}=\hat{B}-\alpha[\hat{A},\hat{B}]+\frac{\alpha^2}{2!}[A,[A,B]]+\cdots
+\end{gather}
+\section{Creation and annihilation operators(omit the hat of operator)}
+
+\begin{gather}
+\begin{cases}
+e^{xa}a^\dagger e^{-xa}=a^\dagger+x\\
+e^{-xa^\dagger}ae^{xa^\dagger}=a+x\\
+\end{cases}\\
+\begin{cases}
+e^{xa^\dagger a}ae^{-xa^\dagger a}=ae^{-x}\\
+e^{xa^\dagger a}a^\dagger e^{-xa^\dagger a}=a^\dagger e^{x}\\
+\end{cases}\\
+\begin{cases}
+e^{xa}f(a,a^\dagger)e^{-xa}=f(a,a^\dagger+x)\\
+e^{-xa^\dagger}f(a,a^\dagger)e^{xa^\dagger}=f(a+x,a^\dagger)\\
+\end{cases}\\
+e^{xa^\dagger a}f(a,a^\dagger)e^{-xa^\dagger a}=f(ae^{-x},a^\dagger e^{x})\\
+\begin{cases}
+[a,f(a,a\dagger)]=\frac{\partial f}{\partial a^\dagger}\\
+[a^\dagger,f(a,a^\dagger)]=-\frac{\partial f}{\partial a}\\
+\end{cases}
+\end{gather}
+\section{Coherent state}
+
+\begin{gather}
+definition: \quad |\alpha\rangle=\alpha|\alpha\rangle\\
+\begin{cases}
+|\alpha\rangle=e^{-\frac{|\alpha|^2}{2}}\sum_{n=0}^\infty\frac{\alpha^n}{\sqrt{n!}}|n\rangle\\
+|\alpha\rangle=D(\alpha)|0\rangle \quad where \quad D(\alpha)=e^{\alpha a^\dagger-\alpha^*a}
+\end{cases}\\
+D^\dagger(\alpha)=D(-\alpha)=[D(\alpha)]^{-1}\\
+\begin{cases}
+D^{-1}(\alpha)aD(\alpha)=a+\alpha\\
+D^{-1}(\alpha)a^\dagger D(\alpha)=a^\dagger+\alpha^*
+\end{cases}  plug \quad \hat{I}=DD^{-1}\quad to\quad higher \quad order\\
+\begin{cases}
+a^\dagger|\alpha\rangle\langle\alpha|=(\frac{\partial}{\partial\alpha}+\alpha^*)|\alpha\rangle\langle\alpha|\\
+a|\alpha\rangle\langle\alpha|=\alpha|\alpha\rangle\langle\alpha|
+\end{cases}
+\end{gather}
+\section{Squeezed state}
+
+\begin{gather}
+S(\xi)=exp(\frac{1}{2}\xi^*a^2-\frac{1}{2}\xi a^{\dagger2}) \quad where \quad \xi=re^{i\theta}\\
+\begin{cases}
+r:squeezed \quad degree\\
+\theta:squeezed \quad direction\\
+\end{cases}\\
+S^\dagger(\alpha)=S(-\alpha)=[S(\alpha)]^{-1}\\
+\begin{cases}
+S^{-1}(\xi)aS(\xi)=acoshr-a^\dagger e^{i\theta}sinhr\\
+S^{-1}(\xi)a^\dagger S(\xi)=a^\dagger coshr-ae^{-i\theta}sinhr
+\end{cases}  plug \quad \hat{I}=SS^\dagger\quad to\quad higher \quad order
+\end{gather}
+
+
+
+
+
+
+
+%结束写文章
+\end{document}
